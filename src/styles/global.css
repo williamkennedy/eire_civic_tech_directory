@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-irish-green: #169B62;
+  --color-irish-green-dark: #0d6b42;
+  --color-irish-green-light: #1bc47a;
+  --color-irish-orange: #FF883E;
+  --color-irish-orange-dark: #e06a20;
+  --color-irish-orange-light: #ffa66b;
+  --color-irish-cream: #FAFAF8;
+  --color-irish-stone: #E8E6E1;
+  --color-irish-charcoal: #1F2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-irish-cream);
+  color: var(--color-irish-charcoal);
+}

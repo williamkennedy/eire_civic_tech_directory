@@ -1,23 +1,102 @@
+---
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Éire 2.0</title>
+    <meta name="description" content="A curated directory of Irish civic tech projects — tools, platforms, and initiatives that empower citizens and strengthen democratic participation across Ireland." />
+    <link rel="canonical" href="https://eire2.ie" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Éire 2.0",
+        "url": "https://eire2.ie",
+        "description": "A curated directory of Irish civic tech projects.",
+        "author": {
+          "@type": "Person",
+          "name": "William Kennedy",
+          "url": "https://williamkennedy.ninja"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Helmet Head",
+          "url": "https://helmethead.ie"
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="bg-irish-green text-white shadow-lg">
+      <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+            <span class="text-irish-green font-extrabold text-lg">É</span>
+          </div>
+          <span class="font-bold text-xl tracking-tight">Éire 2.0</span>
+        </a>
+        <nav class="flex items-center gap-1">
+          <a
+            href="/"
+            class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            About
+          </a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer class="bg-irish-charcoal text-white/70 py-8 mt-16">
+      <div class="max-w-6xl mx-auto px-6 text-center text-sm space-y-2">
+        <p>Éire 2.0 — Showcasing Irish civic technology</p>
+        <p>
+          Built by
+          <a
+            href="https://williamkennedy.ninja"
+            target="_blank"
+            rel="noopener noreferrer author me"
+            title="William Kennedy — Software engineer and civic tech advocate"
+            class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+          >
+            William Kennedy
+          </a>
+          of
+          <a
+            href="https://helmethead.ie"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Helmet Head — Irish software consultancy"
+            class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+          >
+            Helmet Head
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+  }
 </style>

@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    {/* Page Header Card */}
+    <section class="mb-10">
+      <div class="bg-white rounded-2xl shadow-md border border-irish-stone p-8 md:p-12 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-irish-green via-white to-irish-orange"></div>
+        <div class="relative z-10">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-irish-charcoal mb-4 tracking-tight">
+            About Éire 2.0
+          </h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Celebrating the people and projects building a more open, transparent, and engaged Ireland.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Mission Cards */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      {/* Who We Are Card */}
+      <article class="bg-white rounded-xl shadow-sm border border-irish-stone p-8 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-irish-green/10 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-irish-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-irish-charcoal mb-3">Who We Are</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Éire 2.0 is a directory dedicated to showcasing Irish civic technology projects.
+          Our goal is to highlight the tools, platforms, and initiatives that empower citizens,
+          improve government transparency, and strengthen democratic participation across Ireland.
+        </p>
+      </article>
+
+      {/* What We Cover Card */}
+      <article class="bg-white rounded-xl shadow-sm border border-irish-stone p-8 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 bg-irish-orange/10 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-irish-orange-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-irish-charcoal mb-3">What We Cover</h2>
+        <p class="text-gray-600 leading-relaxed">
+          From public spending trackers to election result monitors, petition platforms to
+          geospatial data projects, this site brings together the diverse ecosystem of civic tech
+          being built for and by the people of Ireland.
+        </p>
+      </article>
+    </div>
+
+    {/* Values / Why It Matters Card */}
+    <section class="mb-10">
+      <article class="bg-white rounded-xl shadow-sm border border-irish-stone p-8 md:p-10">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-14 h-14 bg-irish-green/10 rounded-2xl flex items-center justify-center shrink-0">
+            <svg class="w-7 h-7 text-irish-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-irish-charcoal mb-4">Why Civic Tech Matters</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Civic technology bridges the gap between citizens and government. By making data accessible,
+              processes transparent, and participation easy, these projects help build trust and accountability
+              in public institutions.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Ireland has a rich tradition of community organising and democratic engagement. The civic tech
+              movement is the natural evolution of that spirit — using modern tools to solve modern challenges
+              while staying true to the values of openness and fairness.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    {/* CTA Card */}
+    <section>
+      <div class="bg-gradient-to-br from-irish-green to-irish-green-dark rounded-2xl shadow-lg p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Explore the Directory</h2>
+        <p class="text-white/90 mb-8 max-w-xl mx-auto leading-relaxed">
+          Discover the projects making a difference in Irish civic life. Browse by category,
+          status, or simply explore what's out there.
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-irish-green font-bold rounded-xl hover:bg-irish-cream transition-colors shadow-md"
+        >
+          View All Projects
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
