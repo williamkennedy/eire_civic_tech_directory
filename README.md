@@ -120,6 +120,34 @@ Each project automatically gets:
 
 ---
 
+## 🚀 Deployment
+
+This project is deployed to **Cloudflare Pages** using the Astro Cloudflare adapter.
+
+### Environment variables
+
+The `wrangler.jsonc` config references a KV namespace via an environment variable:
+
+| Variable            | Description                              |
+| :------------------ | :--------------------------------------- |
+| `SESSION_KV_ID`     | ID of your Cloudflare KV namespace for sessions |
+
+1. Copy the example env file:
+   ```sh
+   cp .env.example .env
+   ```
+2. Replace `your-kv-namespace-id-here` with your actual KV namespace ID.
+3. The `.env` file is already gitignored — never commit it.
+
+### Manual deploy
+
+```sh
+npm run build
+npx wrangler deploy
+```
+
+---
+
 ## 🧞 Commands
 
 All commands are run from the root of the project:
