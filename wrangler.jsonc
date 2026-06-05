@@ -1,7 +1,7 @@
 {
 	"compatibility_date": "2026-06-05",
 	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "site",
+    "name": "eire-civic-tech-directory",
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
 		"directory": "./dist",
