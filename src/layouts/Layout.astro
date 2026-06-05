@@ -1,5 +1,43 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  schema?: object;
+}
+
+const {
+  title = 'Éire 2.0',
+  description = 'A curated directory of Irish civic tech projects — tools, platforms, and initiatives that empower citizens and strengthen democratic participation across Ireland.',
+  canonical = 'https://eire2.ie',
+  ogType = 'website',
+  schema,
+} = Astro.props;
+
+const fullTitle = title === 'Éire 2.0' ? title : `${title} — Éire 2.0`;
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Éire 2.0",
+  "url": "https://eire2.ie",
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "William Kennedy",
+    "url": "https://williamkennedy.ninja"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Helmet Head",
+    "url": "https://helmethead.ie"
+  }
+};
+
+const pageSchema = schema || defaultSchema;
 ---
 
 <!doctype html>
@@ -10,28 +48,22 @@ import '../styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Éire 2.0</title>
-    <meta name="description" content="A curated directory of Irish civic tech projects — tools, platforms, and initiatives that empower citizens and strengthen democratic participation across Ireland." />
-    <link rel="canonical" href="https://eire2.ie" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Éire 2.0",
-        "url": "https://eire2.ie",
-        "description": "A curated directory of Irish civic tech projects.",
-        "author": {
-          "@type": "Person",
-          "name": "William Kennedy",
-          "url": "https://williamkennedy.ninja"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Helmet Head",
-          "url": "https://helmethead.ie"
-        }
-      }
-    </script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Éire 2.0" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

@@ -1,0 +1,142 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const pageTitle = project.data.title;
+const pageDescription = project.data.description;
+const canonicalUrl = `https://eire2.ie/project/${project.id}`;
+const projectUrl = project.data.link;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": project.data.title,
+  "description": project.data.description,
+  "url": projectUrl,
+  "applicationCategory": project.data.category,
+  "author": {
+    "@type": "Person",
+    "name": "William Kennedy",
+    "url": "https://williamkennedy.ninja"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Helmet Head",
+    "url": "https://helmethead.ie"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Éire 2.0",
+    "url": "https://eire2.ie"
+  }
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  schema={schema}
+>
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    {/* Breadcrumb */}
+    <nav class="mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-gray-500">
+        <li>
+          <a href="/" class="hover:text-irish-green transition-colors">Home</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li class="text-irish-charcoal font-medium" aria-current="page">{project.data.title}</li>
+      </ol>
+    </nav>
+
+    {/* Project Card */}
+    <article class="bg-white rounded-2xl shadow-md border border-irish-stone overflow-hidden">
+      {/* Tricolor accent bar */}
+      <div class="h-2 bg-gradient-to-r from-irish-green via-white to-irish-orange"></div>
+
+      <div class="p-8 md:p-12">
+        <div class="flex items-start justify-between mb-6">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-irish-charcoal tracking-tight">
+            {project.data.title}
+          </h1>
+          <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border shrink-0 ml-4 ${project.data.status ? 'bg-irish-green/10 text-irish-green border-irish-green/20' : 'bg-gray-100 text-gray-600 border-gray-200'}`}>
+            {project.data.status ? 'Active' : 'Inactive'}
+          </span>
+        </div>
+
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          {project.data.description}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 p-6 bg-irish-cream rounded-xl border border-irish-stone">
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Category</p>
+            <p class="text-irish-charcoal font-medium">{project.data.category}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Owner</p>
+            <p class="text-irish-charcoal font-medium">{project.data.owner}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Status</p>
+            <p class="text-irish-charcoal font-medium">{project.data.status ? 'Active' : 'Inactive'}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Website</p>
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-irish-green hover:text-irish-green-dark font-medium underline underline-offset-2 transition-colors"
+            >
+              {new URL(projectUrl).hostname}
+            </a>
+          </div>
+        </div>
+
+        {Content && (
+          <div class="prose prose-slate max-w-none mb-10">
+            <Content />
+          </div>
+        )}
+
+        <a
+          href={projectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-irish-green text-white font-bold rounded-xl hover:bg-irish-green-dark transition-colors shadow-md hover:shadow-lg"
+        >
+          Visit Project
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    {/* Related / Back to projects */}
+    <div class="mt-10 text-center">
+      <a
+        href="/"
+        class="inline-flex items-center text-sm text-gray-500 hover:text-irish-green transition-colors"
+      >
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to all projects
+      </a>
+    </div>
+  </main>
+</Layout>
