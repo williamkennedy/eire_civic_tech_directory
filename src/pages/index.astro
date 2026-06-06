@@ -4,8 +4,14 @@ import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
 
+const categories = [...new Set(projects.map((p) => p.data.category))].sort();
+const owners = [...new Set(projects.map((p) => p.data.owner))].sort();
+
 const activeBadge = 'bg-irish-green/10 text-irish-green border-irish-green/20';
 const inactiveBadge = 'bg-gray-100 text-gray-600 border-gray-200';
+
+const selectClass =
+  'w-full sm:w-auto appearance-none bg-white border border-irish-stone rounded-lg px-4 py-2.5 pr-10 text-sm font-medium text-irish-charcoal shadow-sm hover:border-irish-green/40 focus:outline-none focus:ring-2 focus:ring-irish-green/30 focus:border-irish-green transition-colors';
 ---
 
 <Layout>
@@ -48,14 +54,57 @@ const inactiveBadge = 'bg-gray-100 text-gray-600 border-gray-200';
 
     {/* Projects Grid */}
     <section>
-      <div class="flex items-center justify-between mb-8">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
         <h2 class="text-2xl font-bold text-irish-charcoal">Projects</h2>
-        <span class="text-sm text-gray-500 font-medium">{projects.length} total</span>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="relative">
+            <svg class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+            </svg>
+            <input
+              id="filter-search"
+              type="search"
+              placeholder="Search projects…"
+              aria-label="Search projects"
+              class="w-full sm:w-64 bg-white border border-irish-stone rounded-lg pl-10 pr-4 py-2.5 text-sm font-medium text-irish-charcoal shadow-sm placeholder:text-gray-400 hover:border-irish-green/40 focus:outline-none focus:ring-2 focus:ring-irish-green/30 focus:border-irish-green transition-colors"
+            />
+          </div>
+          <div class="relative">
+            <select id="filter-category" aria-label="Filter by category" class={selectClass}>
+              <option value="">All categories</option>
+              {categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
+            </select>
+            <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="relative">
+            <select id="filter-owner" aria-label="Filter by owner" class={selectClass}>
+              <option value="">All owners</option>
+              {owners.map((owner) => (
+                <option value={owner}>{owner}</option>
+              ))}
+            </select>
+            <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
       </div>
 
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="flex items-center justify-end mb-6">
+        <span id="project-count" class="text-sm text-gray-500 font-medium">{projects.length} total</span>
+      </div>
+
+      <ul id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <li>
+          <li
+            data-category={project.data.category}
+            data-owner={project.data.owner}
+            data-search={`${project.data.title} ${project.data.description} ${project.data.category} ${project.data.owner}`.toLowerCase()}
+          >
             <article class="bg-white rounded-xl shadow-sm border border-irish-stone hover:shadow-lg hover:border-irish-green/30 transition-all duration-300 h-full flex flex-col group">
               <div class="p-6 flex-1 flex flex-col">
                 <div class="flex items-start justify-between mb-4">
@@ -110,6 +159,46 @@ const inactiveBadge = 'bg-gray-100 text-gray-600 border-gray-200';
           </li>
         ))}
       </ul>
+
+      <p id="no-results" class="hidden text-center text-gray-500 py-16">
+        No projects match these filters.
+      </p>
     </section>
   </main>
 </Layout>
+
+<script>
+  const searchInput = document.getElementById('filter-search') as HTMLInputElement | null;
+  const categorySelect = document.getElementById('filter-category') as HTMLSelectElement | null;
+  const ownerSelect = document.getElementById('filter-owner') as HTMLSelectElement | null;
+  const grid = document.getElementById('project-grid');
+  const count = document.getElementById('project-count');
+  const noResults = document.getElementById('no-results');
+
+  if (searchInput && categorySelect && ownerSelect && grid && count && noResults) {
+    const items = Array.from(grid.querySelectorAll<HTMLLIElement>('li'));
+
+    const applyFilters = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categorySelect.value;
+      const owner = ownerSelect.value;
+      let visible = 0;
+
+      for (const item of items) {
+        const matches =
+          (!query || (item.dataset.search ?? '').includes(query)) &&
+          (!category || item.dataset.category === category) &&
+          (!owner || item.dataset.owner === owner);
+        item.classList.toggle('hidden', !matches);
+        if (matches) visible++;
+      }
+
+      count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}`;
+      noResults.classList.toggle('hidden', visible > 0);
+    };
+
+    searchInput.addEventListener('input', applyFilters);
+    categorySelect.addEventListener('change', applyFilters);
+    ownerSelect.addEventListener('change', applyFilters);
+  }
+</script>
