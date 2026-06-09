@@ -15,12 +15,11 @@ const { Content } = await render(project);
 
 const pageTitle = project.data.title;
 const pageDescription = project.data.description;
-const canonicalUrl = `https://eire2.ie/project/${project.id}`;
 const projectUrl = project.data.link;
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
+  "@type": "SoftwareApplication",
   "name": project.data.title,
   "description": project.data.description,
   "url": projectUrl,
@@ -37,8 +36,8 @@ const schema = {
   },
   "isPartOf": {
     "@type": "WebSite",
-    "name": "Éire 2.0",
-    "url": "https://eire2.ie"
+    "name": "Citizen Data",
+    "url": "https://citizendata.ie"
   }
 };
 ---
@@ -46,7 +45,6 @@ const schema = {
 <Layout
   title={pageTitle}
   description={pageDescription}
-  canonical={canonicalUrl}
   schema={schema}
 >
   <main class="max-w-4xl mx-auto px-6 py-12">
