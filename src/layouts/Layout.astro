@@ -63,11 +63,12 @@ const pageSchema = schema || defaultSchema;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+<script src="https://cdn.usefathom.com/script.js" data-site="BQCDKGVD" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="bg-irish-green text-white shadow-lg">
@@ -80,23 +81,23 @@ const pageSchema = schema || defaultSchema;
         </a>
         <nav class="flex items-center gap-1">
           <a
-            href="/"
-            class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            Home
+              href="/"
+              class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+              >
+              Home
           </a>
-          <a
-            href="/about"
-            class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            About
-          </a>
-<a
-            href="https://github.com/williamkennedy/eire_civic_tech_directory"
-            class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            Submit
-          </a>
+            <a
+                href="/about"
+                class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                About
+            </a>
+              <a
+                  href="https://github.com/williamkennedy/eire_civic_tech_directory"
+                  class="px-4 py-2 rounded-lg font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                  Submit
+              </a>
 
         </nav>
       </div>
@@ -106,25 +107,25 @@ const pageSchema = schema || defaultSchema;
       <div class="max-w-6xl mx-auto px-6 text-center text-sm space-y-2">
         <p>Citizen Data — Showcasing Irish civic technology</p>
         <p>
-          Built by
-          <a
+        Built by
+        <a
             href="https://williamkennedy.ninja"
             target="_blank"
             rel="noopener noreferrer author me"
             title="William Kennedy — Software engineer and civic tech advocate"
             class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-          >
+            >
             William Kennedy
-          </a>
+        </a>
           of
           <a
-            href="https://helmethead.ie"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Helmet Head — Irish software consultancy"
-            class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-          >
-            Helmet Head
+              href="https://helmethead.ie"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Helmet Head — Irish software consultancy"
+              class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+              >
+              Helmet Head
           </a>
         </p>
       </div>
