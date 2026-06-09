@@ -10,20 +10,21 @@ interface Props {
 }
 
 const {
-  title = 'Éire 2.0',
+  title = 'Citizen Data',
   description = 'A curated directory of Irish civic tech projects — tools, platforms, and initiatives that empower citizens and strengthen democratic participation across Ireland.',
-  canonical = 'https://eire2.ie',
+  canonical,
   ogType = 'website',
   schema,
 } = Astro.props;
 
-const fullTitle = title === 'Éire 2.0' ? title : `${title} — Éire 2.0`;
+const fullTitle = title === 'Citizen Data' ? title : `${title} — Citizen Data`;
+const canonicalURL = new URL(canonical || Astro.url.pathname, Astro.site);
 
 const defaultSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Éire 2.0",
-  "url": "https://eire2.ie",
+  "name": "Citizen Data",
+  "url": "https://citizendata.ie",
   "description": description,
   "author": {
     "@type": "Person",
@@ -49,13 +50,14 @@ const pageSchema = schema || defaultSchema;
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Éire 2.0" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:site_name" content="Citizen Data" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />
@@ -74,7 +76,7 @@ const pageSchema = schema || defaultSchema;
           <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
             <span class="text-irish-green font-extrabold text-lg">É</span>
           </div>
-          <span class="font-bold text-xl tracking-tight">Éire 2.0</span>
+          <span class="font-bold text-xl tracking-tight">Citizen Data</span>
         </a>
         <nav class="flex items-center gap-1">
           <a
@@ -95,7 +97,7 @@ const pageSchema = schema || defaultSchema;
     <slot />
     <footer class="bg-irish-charcoal text-white/70 py-8 mt-16">
       <div class="max-w-6xl mx-auto px-6 text-center text-sm space-y-2">
-        <p>Éire 2.0 — Showcasing Irish civic technology</p>
+        <p>Citizen Data — Showcasing Irish civic technology</p>
         <p>
           Built by
           <a
