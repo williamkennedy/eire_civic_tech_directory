@@ -1,0 +1,84 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ProjectGrid from '../../components/ProjectGrid.astro';
+import TimelineEntry from '../../components/TimelineEntry.astro';
+import { slugify } from '../../lib/slugify';
+import { timeline, sortByDateDesc, type TimelineUpdate } from '../../lib/timeline';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+
+  // A creator is any project owner or timeline creator, keyed by slug.
+  // The display name comes from the source value (which matches the MD frontmatter).
+  const creators = new Map<string, string>();
+  for (const project of projects) {
+    const slug = slugify(project.data.owner);
+    if (!creators.has(slug)) creators.set(slug, project.data.owner);
+  }
+  for (const update of timeline) {
+    const slug = slugify(update.creator);
+    if (!creators.has(slug)) creators.set(slug, update.creator);
+  }
+
+  return [...creators.entries()].map(([slug, name]) => ({
+    params: { slug },
+    props: {
+      name,
+      projects: projects.filter((project) => slugify(project.data.owner) === slug),
+      updates: sortByDateDesc(timeline.filter((update) => slugify(update.creator) === slug)),
+    },
+  }));
+}
+
+interface Props {
+  name: string;
+  projects: CollectionEntry<'projects'>[];
+  updates: TimelineUpdate[];
+}
+
+const { name, projects, updates } = Astro.props as Props;
+---
+
+<Layout
+  title={name}
+  description={`Projects and timeline updates from ${name} on Citizen Data.`}
+>
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    {/* Header Card */}
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md border border-irish-stone p-8 md:p-12 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-irish-green via-white to-irish-orange"></div>
+        <div class="relative z-10">
+          <p class="text-sm font-semibold uppercase tracking-wide text-irish-green mb-2">Creator</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-irish-charcoal tracking-tight">
+            {name}
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    {projects.length > 0 && (
+      <div class="mb-12">
+        <ProjectGrid projects={projects} heading="Projects" />
+      </div>
+    )}
+
+    {updates.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-bold text-irish-charcoal mb-6">Updates</h2>
+        <ol class="relative border-l-2 border-irish-stone ml-2 md:ml-3 space-y-8 max-w-4xl">
+          {updates.map((entry) => (
+            <TimelineEntry entry={entry} />
+          ))}
+        </ol>
+      </section>
+    )}
+
+    {projects.length === 0 && updates.length === 0 && (
+      <div class="bg-white rounded-xl shadow-sm border border-irish-stone p-12 text-center">
+        <p class="text-gray-500">Nothing listed for this creator yet.</p>
+      </div>
+    )}
+  </main>
+</Layout>

@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { slugify } from '../lib/slugify';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+
+const activeBadge = 'bg-irish-green/10 text-irish-green border-irish-green/20';
+const inactiveBadge = 'bg-gray-100 text-gray-600 border-gray-200';
+---
+
+<article class="bg-white rounded-xl shadow-sm border border-irish-stone hover:shadow-lg hover:border-irish-green/30 transition-all duration-300 h-full flex flex-col group">
+  <div class="p-6 flex-1 flex flex-col">
+    <div class="flex items-start justify-between mb-4">
+      <a href={`/project/${project.id}`} class="group/title">
+        <h3 class="text-lg font-bold text-irish-charcoal group-hover/title:text-irish-green transition-colors leading-tight">
+          {project.data.title}
+        </h3>
+      </a>
+      <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ml-2 shrink-0 ${project.data.status ? activeBadge : inactiveBadge}`}>
+        {project.data.status ? 'Active' : 'Inactive'}
+      </span>
+    </div>
+
+    <a href={`/project/${project.id}`} class="group/desc block flex-1">
+      <p class="text-sm text-gray-600 mb-4 leading-relaxed group-hover/desc:text-gray-800 transition-colors">
+        {project.data.description}
+      </p>
+    </a>
+
+    <div class="space-y-2 mb-5">
+      <div class="flex items-center text-sm">
+        <span class="text-gray-400 font-medium w-20 shrink-0">Category</span>
+        <a
+          href={`/category/${slugify(project.data.category)}`}
+          class="text-irish-charcoal font-medium hover:text-irish-green transition-colors"
+        >
+          {project.data.category}
+        </a>
+      </div>
+      <div class="flex items-center text-sm">
+        <span class="text-gray-400 font-medium w-20 shrink-0">Owner</span>
+        <a
+          href={`/creator/${slugify(project.data.owner)}`}
+          class="text-irish-charcoal hover:text-irish-green transition-colors"
+        >
+          {project.data.owner}
+        </a>
+      </div>
+    </div>
+
+    {project.data.repo && (
+      <a
+        href={project.data.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 self-start mb-5 px-2.5 py-1 rounded-full text-xs font-semibold bg-irish-charcoal/5 text-irish-charcoal border border-irish-stone hover:bg-irish-charcoal hover:text-white transition-colors"
+      >
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+        Open Source
+      </a>
+    )}
+
+    <div class="flex gap-2 mt-auto">
+      <a
+        href={`/project/${project.id}`}
+        class="flex-1 inline-flex items-center justify-center px-4 py-2.5 bg-irish-cream text-irish-charcoal text-sm font-semibold rounded-lg hover:bg-irish-stone transition-colors border border-irish-stone"
+      >
+        Learn More
+      </a>
+      <a
+        href={project.data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 inline-flex items-center justify-center px-4 py-2.5 bg-irish-green text-white text-sm font-semibold rounded-lg hover:bg-irish-green-dark transition-colors shadow-sm hover:shadow"
+      >
+        Visit Site
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
