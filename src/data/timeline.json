@@ -14,5 +14,13 @@
     "project": "citizendata",
     "category": "Governance",
     "url": "https://citizendata.ie"
+  },
+  {
+    "date": "2026-06-05",
+    "impact": "Launched Public Data Unpacked",
+    "creator": "Public Data Unpacked",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://publicdataunpacked.ie"
   }
 ]
