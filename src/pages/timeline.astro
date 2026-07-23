@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TimelineEntry from '../components/TimelineEntry.astro';
+import { timeline, sortByDateDesc } from '../lib/timeline';
+
+const entries = sortByDateDesc(timeline);
+---
+
+<Layout
+  title="Timeline"
+  description="A running timeline of updates and milestones from across the Irish civic tech projects listed in the Citizen Data directory."
+>
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    {/* Hero Card */}
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md border border-irish-stone p-8 md:p-12 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-irish-green via-white to-irish-orange"></div>
+        <div class="relative z-10">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-irish-charcoal mb-4 tracking-tight">
+            Project Timeline
+          </h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Updates and milestones from across the Irish civic tech projects in this directory —
+            newest first.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Timeline */}
+    <section>
+      {entries.length === 0 ? (
+        <div class="bg-white rounded-xl shadow-sm border border-irish-stone p-12 text-center">
+          <p class="text-gray-500">No updates yet — check back soon.</p>
+        </div>
+      ) : (
+        <ol class="relative border-l-2 border-irish-stone ml-2 md:ml-3 space-y-8">
+          {entries.map((entry) => (
+            <TimelineEntry entry={entry} />
+          ))}
+        </ol>
+      )}
+    </section>
+  </main>
+</Layout>
