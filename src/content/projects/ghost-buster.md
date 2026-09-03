@@ -1,7 +1,7 @@
 ---
 title: Ghost Buster
 category: Transport
-owner: Oliver Moran
+owner: ["Oliver Moran"]
 description: Real-time Cork bus tracker using NTA data to help fight ghost buses.
 status: true
 link: https://realtime.prototype.website/

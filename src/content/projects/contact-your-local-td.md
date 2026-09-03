@@ -1,7 +1,7 @@
 ﻿---
 title: Contact Your Local TD
 category: Governance
-owner: Unknown
+owner: ["Unknown"]
 description: Contact details and voting records for your local TD.
 status: true
 link: https://www.contactyourtd.ie/

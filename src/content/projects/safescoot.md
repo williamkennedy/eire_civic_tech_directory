@@ -1,7 +1,7 @@
 ﻿---
 title: Safescoot.ie
 category: Transport
-owner: Warren Brandt
+owner: ["Warren Brandt"]
 description: Find out if your e-scooter is road-legal in Ireland — before the Gardaí do.
 status: true
 link: https://safescoot.ie/

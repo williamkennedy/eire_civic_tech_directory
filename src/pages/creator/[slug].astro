@@ -13,8 +13,10 @@ export async function getStaticPaths() {
   // The display name comes from the source value (which matches the MD frontmatter).
   const creators = new Map<string, string>();
   for (const project of projects) {
-    const slug = slugify(project.data.owner);
-    if (!creators.has(slug)) creators.set(slug, project.data.owner);
+    for (const owner of project.data.owner) {
+      const slug = slugify(owner);
+      if (!creators.has(slug)) creators.set(slug, owner);
+    }
   }
   for (const update of timeline) {
     const slug = slugify(update.creator);
@@ -25,7 +27,9 @@ export async function getStaticPaths() {
     params: { slug },
     props: {
       name,
-      projects: projects.filter((project) => slugify(project.data.owner) === slug),
+      projects: projects.filter((project) =>
+        project.data.owner.some((owner) => slugify(owner) === slug)
+      ),
       updates: sortByDateDesc(timeline.filter((update) => slugify(update.creator) === slug)),
     },
   }));

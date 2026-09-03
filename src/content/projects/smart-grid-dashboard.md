@@ -1,7 +1,7 @@
 ---
 title: Smart Grid Dashboard
 category: Energy
-owner: EirGrid Group plc
+owner: ["EirGrid Group plc"]
 description: Real-time dashboard exploring energy demand and generation across the island of Ireland.
 status: true
 link: https://www.smartgriddashboard.com/all/

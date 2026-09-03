@@ -1,7 +1,7 @@
 ﻿---
 title: Tobar na hÉigse
 category: Education
-owner: Draoi
+owner: ["Draoi"]
 description: A directory for Irish language learning resources.
 status: true
 link: https://draoi.github.io/tobar-na-heigse/

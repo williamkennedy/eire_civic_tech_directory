@@ -1,7 +1,7 @@
 ---
 title: Collision Tracker
 category: Road Safety
-owner: Dublin Inquirer
+owner: ["Dublin Inquirer"]
 description: Crowdsourced platform for reporting active travel collisions, hazards and near misses.
 status: true
 link: https://www.collisiontracker.ie/

@@ -1,7 +1,7 @@
 ---
 title: OpenStreetMap Ireland
 category: Geospatial
-owner: OpenStreetMap Ireland
+owner: ["OpenStreetMap Ireland"]
 description: The home of the OpenStreetMap community in Ireland, providing free open map data, tutorials and mapping missions.
 status: true
 link: https://www.openstreetmap.ie

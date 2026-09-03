@@ -1,7 +1,7 @@
 ---
 title: MyUplift
 category: Petitions
-owner: Uplift
+owner: ["Uplift"]
 description: Petition platform.
 status: true
 link: https://my.uplift.ie/

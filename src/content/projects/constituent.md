@@ -1,7 +1,7 @@
 ﻿---
 title: Constituent
 category: Governance
-owner: Owen Connor
+owner: ["Owen Connor"]
 description: Find your representatives and track the issues that shape Ireland and the EU.
 status: true
 link: https://constituent.ie/

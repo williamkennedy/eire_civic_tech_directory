@@ -1,7 +1,7 @@
 ---
 title: Public Data Unpacked
 category: Accountability
-owner: Public Data Unpacked
+owner: ["Public Data Unpacked"]
 description: Irish public-sector datasets turned into clear, interactive dashboards.
 status: true
 link: https://www.publicdataunpacked.ie/

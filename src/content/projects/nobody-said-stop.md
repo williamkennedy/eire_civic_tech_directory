@@ -1,7 +1,7 @@
 ﻿---
 title: Nobody Said Stop
 category: Accountability
-owner: u/Beneficial-Celery-51 on Reddit
+owner: ["u/Beneficial-Celery-51 on Reddit"]
 description: Documenting a decade of wasted Irish public money.
 status: true
 link: https://nobody-said-stop.pages.dev/

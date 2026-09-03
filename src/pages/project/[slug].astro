@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import { slugify } from '../../lib/slugify';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -99,7 +100,19 @@ const schema = {
           </div>
           <div>
             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Owner</p>
-            <p class="text-irish-charcoal font-medium">{project.data.owner}</p>
+            <p class="text-irish-charcoal font-medium">
+              {project.data.owner.map((owner, i) => (
+                <>
+                  {i > 0 && <span class="text-gray-300"> · </span>}
+                  <a
+                    href={`/creator/${slugify(owner)}`}
+                    class="hover:text-irish-green transition-colors"
+                  >
+                    {owner}
+                  </a>
+                </>
+              ))}
+            </p>
           </div>
           <div>
             <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Status</p>

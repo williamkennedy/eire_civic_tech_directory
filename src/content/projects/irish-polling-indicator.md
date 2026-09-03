@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Polling Indicator
 category: Democracy
-owner: Stefan Müller, UCD
+owner: ["Stefan Müller", "UCD"]
 description: Polling data aggregator for Dáil Éireann.
 status: true
 link: https://pollingindicator.com/

@@ -4,7 +4,7 @@ import data from '../data/timeline.json';
 export interface TimelineUpdate {
   date: string;      // ISO 8601 (YYYY-MM-DD)
   impact: string;    // what changed
-  creator: string;   // matches a project owner value from the MD frontmatter
+  creator: string;   // matches one of a project's owner values from the MD frontmatter
   project: string;   // project slug (matches a file in src/content/projects); may be "" for site-level updates
   category: string;  // matches a project category value from the MD frontmatter; may be ""
   url: string;       // external link to the update

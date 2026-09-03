@@ -1,7 +1,7 @@
 ﻿---
 title: HomeTruth
 category: Housing
-owner: u/Extension-Street3016 on Reddit
+owner: ["u/Extension-Street3016 on Reddit"]
 description: The honest story behind Irish property prices.
 status: true
 link: https://hometruth.ie/

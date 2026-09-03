@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Election Projections
 category: Democracy
-owner: Harry McEvansoneya
+owner: ["Harry McEvansoneya"]
 description: Seat projections for the next Irish general election.
 status: true
 link: https://irishelectionprojections.com/

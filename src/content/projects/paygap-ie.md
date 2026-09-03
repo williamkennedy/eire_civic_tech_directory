@@ -1,7 +1,7 @@
 ---
 title: PayGap.ie
 category: Equality
-owner: Jennifer Keane
+owner: ["Jennifer Keane"]
 description: Searchable database of Irish gender pay gap reports, aggregating company disclosures required under the Gender Pay Gap Information Act 2021.
 status: true
 link: https://paygap.ie/

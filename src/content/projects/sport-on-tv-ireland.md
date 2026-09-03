@@ -1,7 +1,7 @@
 ﻿---
 title: Sport on TV Ireland
 category: Sport
-owner: u/Euphoric-Map7197 on Reddit
+owner: ["u/Euphoric-Map7197 on Reddit"]
 description: Your complete guide to live sport on TV in Ireland
 status: true
 link: https://sportontvireland.ie/

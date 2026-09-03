@@ -1,7 +1,7 @@
 ---
 title: Where Your Money Goes
 category: Finance
-owner: Government
+owner: ["Government"]
 description: Government spending website.
 status: true
 link: https://whereyourmoneygoes.gov.ie

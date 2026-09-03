@@ -1,7 +1,7 @@
 ---
 title: The Coimisiún na Meán Funding Register
 category: Accountability
-owner: Nick Delehanty
+owner: ["Nick Delehanty"]
 description: An independent register of Coimisiún na Meán funding awards compiled from public announcements.
 status: true
 link: https://irishmediafunding.netlify.app/

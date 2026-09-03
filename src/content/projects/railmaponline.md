@@ -1,7 +1,7 @@
 ﻿---
 title: RailMapOnline
 category: Transport
-owner: Unknown
+owner: ["Unknown"]
 description: Past and present railways in Ireland, the UK and the US.
 status: true
 link: https://www.railmaponline.com/

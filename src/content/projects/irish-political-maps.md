@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Political Maps
 category: Geospatial
-owner: Jason Kelleher, NLI
+owner: ["Jason Kelleher", "NLI"]
 description: Maps and information on Irish elections, referenda and political parties.
 status: false
 link: https://catalogue.nli.ie/Record/vtls000734917

@@ -1,7 +1,7 @@
 ﻿---
 title: UK Parliamentary Constituencies
 category: Geospatial
-owner: Unknown
+owner: ["Unknown"]
 description: UK parliamentary constituencies (including Northern Ireland and pre-partition Ireland) since 1885.
 status: true
 link: https://parlconst.org/
