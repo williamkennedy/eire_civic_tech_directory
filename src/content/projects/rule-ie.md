@@ -1,7 +1,7 @@
 ﻿---
 title: Rule.ie
 category: Governance
-owner: Unknown
+owner: ["Unknown"]
 description: AI-written summaries of Oireachtas bills.
 status: true
 link: https://rule.ie/

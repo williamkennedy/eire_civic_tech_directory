@@ -1,7 +1,7 @@
 ---
 title: Dáil Tracker
 category: Governance
-owner: peweet
+owner: ["peweet"]
 description: A civic-data pipeline for Irish parliamentary transparency — tracking members, legislation, attendance, votes, payments, lobbying, and more.
 status: true
 link: https://dailtracker.streamlit.app/member-overview

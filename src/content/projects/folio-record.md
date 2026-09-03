@@ -1,7 +1,7 @@
 ﻿---
 title: Folio Record
 category: Governance
-owner: Unknown
+owner: ["Unknown"]
 description: A public-interest reference layer for Irish public records.
 status: true
 link: https://www.foliorecord.com/

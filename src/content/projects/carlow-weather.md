@@ -1,7 +1,7 @@
 ﻿---
 title: Carlow Weather
 category: Environment
-owner: Alan O’Reilly
+owner: ["Alan O’Reilly"]
 description: Weather updates and forecasts.
 status: true
 link: https://www.carlowweather.com/

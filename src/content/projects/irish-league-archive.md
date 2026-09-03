@@ -1,7 +1,7 @@
 ﻿---
 title: Irish League Archive
 category: Sport
-owner: Haydn Milligan
+owner: ["Haydn Milligan"]
 description: A comprehensive archive of Irish soccer statistics.
 status: true
 link: https://www.irishleaguearchive.org/

@@ -1,7 +1,7 @@
 ---
 title: Oireachtas Explorer
 category: Governance
-owner: David Ward
+owner: ["David Ward"]
 description: Search the entire workings of Ireland's parliament from 1919 to today in one place — every member, debate, bill, question, and vote, drawn live from the Oireachtas Open Data API in an easily naviable format.
 status: true
 link: https://oireachtas-explorer.ie

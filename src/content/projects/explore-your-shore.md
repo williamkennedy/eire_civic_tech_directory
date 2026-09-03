@@ -1,7 +1,7 @@
 ---
 title: Explore Your Shore!
 category: Environment
-owner: National Biodiversity Data Centre
+owner: ["National Biodiversity Data Centre"]
 description: Ireland's marine biodiversity citizen science platform recording marine species around the Irish coast.
 status: true
 link: https://exploreyourshore.ie/

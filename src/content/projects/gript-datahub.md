@@ -1,7 +1,7 @@
 ---
 title: Gript Datahub
 category: Governance
-owner: Gript
+owner: ["Gript"]
 description: Tracks the cost of politics in Ireland — TD salaries, expenses, allowances, and state funding of political parties.
 status: true
 link: https://data.gript.ie/

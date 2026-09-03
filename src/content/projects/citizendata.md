@@ -1,7 +1,7 @@
 ---
 title: Citizen Data
 category: Governance
-owner: William Kennedy
+owner: ["William Kennedy"]
 description: A curated directory of Irish civic tech projects, tools, and initiatives.
 status: true
 link: https://citizendata.ie

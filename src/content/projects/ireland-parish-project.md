@@ -1,7 +1,7 @@
 ﻿---
 title: Ireland Parish Project
 category: Geospatial
-owner: Joe Cantwell
+owner: ["Joe Cantwell"]
 description: A comprehensive digital map of parishes in Ireland.
 status: true
 link: https://sites.google.com/view/cantwell-gis/projects/ireland-parishes

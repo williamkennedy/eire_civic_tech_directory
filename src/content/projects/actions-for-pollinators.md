@@ -1,7 +1,7 @@
 ---
 title: Actions for Pollinators
 category: Environment
-owner: National Biodiversity Data Centre
+owner: ["National Biodiversity Data Centre"]
 description: Online mapping system for registering and mapping pollinator-friendly actions across Ireland.
 status: true
 link: https://pollinators.biodiversityireland.ie/

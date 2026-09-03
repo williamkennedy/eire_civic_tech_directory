@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Election Projections
 category: Democracy
-owner: Dr Eoghan Kelly, Ayushi Gupta
+owner: ["Dr Eoghan Kelly", "Ayushi Gupta"]
 description: The first customisable, constituency level projection for Irish Elections.
 status: true
 link: https://irishelections.ie/

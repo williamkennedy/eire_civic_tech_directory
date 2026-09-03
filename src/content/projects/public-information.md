@@ -1,7 +1,7 @@
 ---
 title: Public Information
 category: Governance
-owner: Dave Anderson
+owner: ["Dave Anderson"]
 description: Canonical list of public bodies and related datasets including Freedom of Information
 status: true
 link: https://www.publicinformation.ie

@@ -10,7 +10,7 @@ interface Props {
 const { projects, heading = 'Projects' } = Astro.props;
 
 const categories = [...new Set(projects.map((p) => p.data.category))].sort();
-const owners = [...new Set(projects.map((p) => p.data.owner))].sort();
+const owners = [...new Set(projects.flatMap((p) => p.data.owner))].sort();
 
 const selectClass =
   'w-full sm:w-auto appearance-none bg-white border border-irish-stone rounded-lg px-4 py-2.5 pr-10 text-sm font-medium text-irish-charcoal shadow-sm hover:border-irish-green/40 focus:outline-none focus:ring-2 focus:ring-irish-green/30 focus:border-irish-green transition-colors';
@@ -69,9 +69,9 @@ const selectClass =
     {projects.map((project) => (
       <li
         data-category={project.data.category}
-        data-owner={project.data.owner}
+        data-owner={JSON.stringify(project.data.owner)}
         data-opensource={project.data.repo ? 'true' : 'false'}
-        data-search={`${project.data.title} ${project.data.description} ${project.data.category} ${project.data.owner}`.toLowerCase()}
+        data-search={`${project.data.title} ${project.data.description} ${project.data.category} ${project.data.owner.join(' ')}`.toLowerCase()}
       >
         <ProjectCard project={project} />
       </li>
@@ -106,7 +106,7 @@ const selectClass =
         const matches =
           (!query || (item.dataset.search ?? '').includes(query)) &&
           (!category || item.dataset.category === category) &&
-          (!owner || item.dataset.owner === owner) &&
+          (!owner || (JSON.parse(item.dataset.owner ?? '[]') as string[]).includes(owner)) &&
           (!openSourceOnly || item.dataset.opensource === 'true');
         item.classList.toggle('hidden', !matches);
         if (matches) visible++;

@@ -1,7 +1,7 @@
 ---
 title: PublicPurse.ie
 category: Finance
-owner: William Kennedy
+owner: ["William Kennedy"]
 description: Indexing every line item of Irish government expenditure.
 status: true
 link: https://publicpurse.ie

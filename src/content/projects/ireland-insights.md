@@ -1,7 +1,7 @@
 ---
 title: IrelandInsights
 category: Geospatial
-owner: IrelandInsights
+owner: ["IrelandInsights"]
 description: Explore Ireland down to Electoral Division level — live-mapped census, housing and election data, plus a data-driven Canvass Planner built for campaign teams.
 status: true
 link: https://irelandinsights.ie/

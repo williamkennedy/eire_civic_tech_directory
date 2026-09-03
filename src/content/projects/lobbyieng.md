@@ -1,7 +1,7 @@
 ﻿---
 title: Lobbyieng
 category: Accountability
-owner: Robert McElhinney
+owner: ["Robert McElhinney"]
 description: Interactive web app visualising Irish lobbying activities.
 status: true
 link: https://lobbyieng.com/

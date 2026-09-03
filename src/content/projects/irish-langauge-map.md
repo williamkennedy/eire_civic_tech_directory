@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Language Map
 category: Geospatial
-owner: Alessio Coci
+owner: ["Alessio Coci"]
 description: Maps of Irish speaking ability by county since 1851.
 status: true
 link: https://acoci86.github.io/irish-language-map/

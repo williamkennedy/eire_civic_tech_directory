@@ -1,7 +1,7 @@
 ﻿---
 title: HomeTrue
 category: Housing
-owner: Unknown
+owner: ["Unknown"]
 description: Search any address in Ireland to see the commute, energy costs, schools, safety and more.
 status: true
 link: https://hometrue.ie/

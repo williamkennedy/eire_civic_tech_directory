@@ -1,7 +1,7 @@
 ﻿---
 title: IrelandElection.com
 category: Democracy
-owner: Gareth Deegan
+owner: ["Gareth Deegan"]
 description: Election results in the Republic of Ireland.
 status: true
 link: https://irelandelection.com/

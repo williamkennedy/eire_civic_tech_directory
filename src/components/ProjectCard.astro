@@ -41,14 +41,21 @@ const inactiveBadge = 'bg-gray-100 text-gray-600 border-gray-200';
           {project.data.category}
         </a>
       </div>
-      <div class="flex items-center text-sm">
-        <span class="text-gray-400 font-medium w-20 shrink-0">Owner</span>
-        <a
-          href={`/creator/${slugify(project.data.owner)}`}
-          class="text-irish-charcoal hover:text-irish-green transition-colors"
-        >
-          {project.data.owner}
-        </a>
+      <div class="flex items-start text-sm">
+        <span class="text-gray-400 font-medium w-20 shrink-0 pt-px">Owner</span>
+        <span class="flex flex-wrap gap-x-1 gap-y-1">
+          {project.data.owner.map((owner, i) => (
+            <>
+              {i > 0 && <span class="text-gray-300">·</span>}
+              <a
+                href={`/creator/${slugify(owner)}`}
+                class="text-irish-charcoal hover:text-irish-green transition-colors"
+              >
+                {owner}
+              </a>
+            </>
+          ))}
+        </span>
       </div>
     </div>
 

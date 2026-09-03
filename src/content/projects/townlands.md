@@ -1,7 +1,7 @@
 ---
 title: Townlands.ie
 category: Geospatial
-owner: OpenStreetMap Ireland
+owner: ["OpenStreetMap Ireland"]
 description: Searchable index of Irish townlands, civil parishes, baronies and counties based on OpenStreetMap data.
 status: true
 link: https://www.townlands.ie

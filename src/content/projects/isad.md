@@ -1,7 +1,7 @@
 ---
 title: ISAD
 category: Governance
-owner: UCD
+owner: ["UCD"]
 description: Irish State Administration Database.
 status: true
 link: https://isad.ie/

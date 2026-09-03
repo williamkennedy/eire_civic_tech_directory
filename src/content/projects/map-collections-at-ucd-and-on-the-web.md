@@ -1,7 +1,7 @@
 ﻿---
 title: Map Collections at UCD and on the Web
 category: Geospatial
-owner: UCD
+owner: ["UCD"]
 description: A vast list of digitised, scanned and physical maps relating to Ireland.
 status: true
 link: https://libguides.ucd.ie/findingmaps

@@ -1,7 +1,7 @@
 ---
 title: Green Collective
 category: Energy
-owner: Johnston & Wang Green Collective KlG
+owner: ["Johnston & Wang Green Collective KlG"]
 description: Irish grid data and analysis platform tracking electricity generation, demand, and decarbonisation efforts.
 status: true
 link: https://www.greencollective.io/

@@ -1,7 +1,7 @@
 ---
 title: Derelict Sites
 category: Housing
-owner: Rob Cross
+owner: ["Rob Cross"]
 description: Data-led project mapping derelict and long-term vacant properties across Irish local authorities.
 status: true
 link: https://www.derelictsites.com/

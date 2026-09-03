@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Demographic Polling Dataset
 category: Democracy
-owner: Stefan Müller, Thomas Pluck, Paula Montano, UCD
+owner: ["Stefan Müller", "Thomas Pluck", "Paula Montano", "UCD"]
 description: Polling data on Irish citizens’ vote intentions, satisfaction with the government, and approval of party leaders.
 status: true
 link: https://irishpoliticsdata.shinyapps.io/demographicpolling/

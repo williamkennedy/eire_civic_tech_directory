@@ -1,7 +1,7 @@
 ﻿---
 title: Civgraph
 category: Geospatial
-owner: Scott Moore (@scottmoore0)
+owner: ["Scott Moore (@scottmoore0)"]
 description: Maps, boundaries, census data and election results for the island of Ireland.
 status: true
 link: https://civgraph.net/

@@ -1,7 +1,7 @@
 ﻿---
 title: Irish Politics Data
 category: Democracy
-owner: Stefan Müller, Michele Crepaz
+owner: ["Stefan Müller", "Michele Crepaz"]
 description: Links to datasets, text corpora, and dashboards on Irish politics.
 status: true
 link: https://irishpoliticsdata.com/

@@ -1,7 +1,7 @@
 ﻿---
 title: Baile Beo
 category: Equality
-owner: Dave McGinn
+owner: ["Dave McGinn"]
 description: Place names as Gaeilge.
 status: true
 link: https://www.bailebeo.ie/

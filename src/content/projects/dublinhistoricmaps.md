@@ -1,7 +1,7 @@
 ﻿---
 title: DublinHistoricMaps
 category: Geospatial
-owner: Brian Hollinshead
+owner: ["Brian Hollinshead"]
 description: Dublin historic maps, boundaries & and OpenStreetMap miscellany.
 status: true
 link: https://www.dublinhistoricmaps.ie/

@@ -1,7 +1,7 @@
 ﻿---
 title: Historic Stats
 category: Geospatial
-owner: Christopher O'Connor
+owner: ["Christopher O'Connor"]
 description: A website for maps and statistical analysis of historical statistics in Ireland and Wales.
 status: true
 link: https://historicstats.com/
