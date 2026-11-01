@@ -1,7 +1,7 @@
 ---
 title: Monumental Ireland
 category: Geospatial
-owner: ["Monumental Ireland"]
+owner: ["Simon Tuite"]
 description: A digital guide to Ireland's prehistoric monuments, searchable by county or type, with SMR-verified entries, maps, and visitor information.
 status: true
 link: https://monumentalireland.ie/

@@ -1,10 +1,10 @@
 ---
-title: Government Mapped
+title: 8GI Eire
 category: Accountability
 owner: ["James Spalding"]
 description: Accountability and government mapping website.
 status: true
-link: https://governmentmapped.vercel.app/accountability/
+link: https://www.8gi.org/public-record/ireland
 foundingYear: 2025
 ---
 
