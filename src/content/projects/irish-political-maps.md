@@ -8,6 +8,6 @@ link: https://catalogue.nli.ie/Record/vtls000734917
 foundingYear: 2011
 ---
 
-Irish Political Maps covers elections throughout the island of Ireland from the 19th century to the present day, with maps showing the results of Ireland's many elections and referenda, as well as the different constituencies which have been in use throughout the last 200 years. The site was launched in 2010 by Jason Kelleher and went down in 2023. Copies of the site from 2014-2018 were archived by the National Library of Ireland.
+Irish Political Maps covers elections throughout the island of Ireland from the 19th century to the present day, with maps showing the results of Ireland's many elections and referenda, as well as the different constituencies which have been in use throughout the last 200 years. The site was launched in 2011 by Jason Kelleher and went down in 2023. Copies of the site from 2014-2018 were archived by the National Library of Ireland.
 
 

@@ -1,7 +1,7 @@
 ---
 title: Derelict Property Leads
 category: Housing
-owner: ["Derelict Property Leads"]
+owner: ["Michael Gannon"]
 description: A searchable database of vacant and derelict properties from Ireland's official council registers, with owner details, valuations, and grant eligibility up to €70,000.
 status: true
 link: https://www.derelictproperties.ie
