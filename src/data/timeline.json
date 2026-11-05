@@ -22,5 +22,29 @@
     "project": "citizendata",
     "category": "Governance",
     "url": "https://citizendata.ie"
+  },
+  {
+    "date": "2026-11-01",
+    "impact": "IPAS Weekly dashboard refreshed to week ending 25 Oct 2026",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/"
+  },
+  {
+    "date": "2026-10-23",
+    "impact": "Employment Permits dashboard refreshed with data to September 2026",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/"
+  },
+  {
+    "date": "2026-10-19",
+    "impact": "Published notice of OpenStreetMap Ireland AGM 2026",
+    "creator": "OpenStreetMap Ireland",
+    "project": "openstreetmap-ireland",
+    "category": "Geospatial",
+    "url": "https://www.openstreetmap.ie/openstreetmap-ireland-agm-2026/"
   }
 ]
