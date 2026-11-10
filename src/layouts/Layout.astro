@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getCategories } from '../lib/categories';
 
 interface Props {
   title?: string;
@@ -39,6 +40,8 @@ const defaultSchema = {
 };
 
 const pageSchema = schema || defaultSchema;
+
+const categories = await getCategories();
 ---
 
 <!doctype html>
@@ -119,30 +122,67 @@ const pageSchema = schema || defaultSchema;
       }
     </script>
     <slot />
-    <footer class="bg-irish-charcoal text-white/70 py-8 mt-16">
-      <div class="max-w-6xl mx-auto px-6 text-center text-sm space-y-2">
-        <p>Citizen Data — Showcasing Irish civic technology</p>
-        <p>
-        Built by
-        <a
+    <footer class="bg-irish-charcoal text-white/70 mt-16">
+      <div class="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-12 text-sm">
+        <div class="md:col-span-4">
+          <a href="/" class="font-bold text-lg text-white tracking-tight">Citizen Data</a>
+          <p class="mt-3 leading-relaxed max-w-xs">
+            A curated directory of Irish civic tech tools, platforms and initiatives.
+          </p>
+        </div>
+
+        <nav aria-label="Site" class="md:col-span-2">
+          <h2 class="text-xs font-semibold uppercase tracking-wide text-white mb-4">Explore</h2>
+          <ul class="space-y-2">
+            <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="/timeline" class="hover:text-white transition-colors">Timeline</a></li>
+            <li><a href="https://github.com/williamkennedy/eire_civic_tech_directory" class="hover:text-white transition-colors">Submit a project</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Categories" class="md:col-span-6">
+          <h2 class="text-xs font-semibold uppercase tracking-wide text-white mb-4">Categories</h2>
+          <ul class="columns-2 sm:columns-3 gap-6 space-y-2">
+            {categories.map((category) => (
+              <li class="break-inside-avoid">
+                <a href={`/category/${category.slug}`} class="hover:text-white transition-colors">
+                  {category.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="border-t border-white/10">
+        <p class="max-w-6xl mx-auto px-6 py-6 text-xs text-white/60">
+          Originally created by
+          <a
             href="https://williamkennedy.ninja"
             target="_blank"
             rel="noopener noreferrer author me"
             title="William Kennedy — Software engineer and civic tech advocate"
             class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-            >
+          >
             William Kennedy
-        </a>
+          </a>
           of
           <a
-              href="https://helmethead.ie"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Helmet Head — Irish software consultancy"
-              class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-              >
-              Helmet Head
-          </a>
+            href="https://helmethead.ie"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Helmet Head — Irish software consultancy"
+            class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+          >
+            Helmet Head</a>, now maintained by a
+          <a
+            href="https://github.com/williamkennedy/eire_civic_tech_directory/graphs/contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+          >
+            team of volunteers</a>.
         </p>
       </div>
     </footer>
