@@ -4,28 +4,18 @@ import Layout from '../../layouts/Layout.astro';
 import ProjectGrid from '../../components/ProjectGrid.astro';
 import TimelineEntry from '../../components/TimelineEntry.astro';
 import { slugify } from '../../lib/slugify';
+import { getCategories } from '../../lib/categories';
 import { timeline, sortByDateDesc, type TimelineUpdate } from '../../lib/timeline';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
+  const categories = await getCategories();
 
-  // A category is any project category or timeline category, keyed by slug.
-  // The display name comes from the source value (which matches the MD frontmatter).
-  const categories = new Map<string, string>();
-  for (const project of projects) {
-    const slug = slugify(project.data.category);
-    if (!categories.has(slug)) categories.set(slug, project.data.category);
-  }
-  for (const update of timeline) {
-    if (!update.category) continue;
-    const slug = slugify(update.category);
-    if (!categories.has(slug)) categories.set(slug, update.category);
-  }
-
-  return [...categories.entries()].map(([slug, name]) => ({
+  return categories.map(({ slug, name }) => ({
     params: { slug },
     props: {
       name,
+      slug,
       projects: projects.filter((project) => slugify(project.data.category) === slug),
       updates: sortByDateDesc(timeline.filter((update) => slugify(update.category) === slug)),
     },
@@ -34,11 +24,12 @@ export async function getStaticPaths() {
 
 interface Props {
   name: string;
+  slug: string;
   projects: CollectionEntry<'projects'>[];
   updates: TimelineUpdate[];
 }
 
-const { name, projects, updates } = Astro.props as Props;
+const { name, slug, projects, updates } = Astro.props as Props;
 ---
 
 <Layout
@@ -61,7 +52,7 @@ const { name, projects, updates } = Astro.props as Props;
 
     {projects.length > 0 && (
       <div class="mb-12">
-        <ProjectGrid projects={projects} heading="Projects" />
+        <ProjectGrid projects={projects} heading="Projects" currentCategory={slug} />
       </div>
     )}
 
