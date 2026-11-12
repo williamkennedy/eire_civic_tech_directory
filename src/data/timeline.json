@@ -24,6 +24,46 @@
     "url": "https://citizendata.ie"
   },
   {
+    "date": "2026-11-11",
+    "impact": "Live Register dashboard refreshed to October 2026 (168,352 persons on the Live Register)",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/live-register"
+  },
+  {
+    "date": "2026-11-08",
+    "impact": "Added the 1926 Census to Irish Roots, searchable by name with households linked to their townland",
+    "creator": "Conor Maguire",
+    "project": "irish-roots",
+    "category": "Genealogy",
+    "url": "https://irishroots.ie/news/the-1926-census-on-irish-roots-every-household-linked-to-its-townland/"
+  },
+  {
+    "date": "2026-11-07",
+    "impact": "Added the Tithe Applotment Books search (about 700,000 entries across 29 counties) to Irish Roots",
+    "creator": "Conor Maguire",
+    "project": "irish-roots",
+    "category": "Genealogy",
+    "url": "https://irishroots.ie/news/the-tithe-applotment-books-ireland-before-the-famine-name-by-name/"
+  },
+  {
+    "date": "2026-11-07",
+    "impact": "New IPAS Payments Returning Centres page listing 308 centres returning to original or alternative use",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/payments/returning-centres"
+  },
+  {
+    "date": "2026-11-06",
+    "impact": "IPAS Weekly dashboard refreshed to week ending 1 Nov 2026",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/ipas-weekly"
+  },
+  {
     "date": "2026-11-01",
     "impact": "IPAS Weekly dashboard refreshed to week ending 25 Oct 2026",
     "creator": "Nick Delehanty",
