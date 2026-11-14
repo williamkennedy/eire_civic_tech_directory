@@ -5,6 +5,7 @@ owner: ["Peter Donaghy"]
 description: Dashboards on Irish electricity and Northern Ireland elections, plus trackers testing economic hypotheses.
 status: true
 link: https://salmonofdata.com/
+foundingYear: 2026
 ---
 
 Salmon of Data is a collection of data dashboards and trackers by Peter Donaghy, a Belfast-based accountant and data analyst.

@@ -5,6 +5,7 @@ owner: ["Conjora Limited"]
 description: Free tools that apply Irish rules on tax, rent, grants and consumer rights to your own figures.
 status: true
 link: https://www.checkireland.ie/
+foundingYear: 2025
 ---
 
 CheckIreland is a set of 87 free tools that apply Ireland's published rules, including tax bands, rent caps, grant rates, welfare rates and consumer law, to your own numbers. It shows what something should cost, what you are entitled to and whether a deal is fair before you pay.
