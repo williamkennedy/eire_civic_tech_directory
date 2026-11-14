@@ -5,6 +5,7 @@ owner: ["Ronan Lyons"]
 description: Long-run Irish data on schools, railways, fairs, crime and housing, with charts and CSV or Excel downloads.
 status: true
 link: https://www.ronanlyons.com/data
+foundingYear: 2019
 ---
 
 Irish Historical Data is a collection of long-run datasets, each published with a chart and free to download as a CSV or Excel file.
