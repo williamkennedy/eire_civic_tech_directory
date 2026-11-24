@@ -3,7 +3,7 @@ title: WhoFixesThis.ie
 category: Governance
 owner: ["Conor Curran"]
 description: Helps Irish citizens find the right County Council or National agency to report local issues such as potholes, drainage, lighting and graffiti etc.
-status: false
+status: true
 link: https://whofixesthis.ie
 ---
 
