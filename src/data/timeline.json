@@ -24,6 +24,30 @@
     "url": "https://citizendata.ie"
   },
   {
+    "date": "2026-11-17",
+    "impact": "Emergency Accommodation dashboard refreshed to September 2026 (12,168 adults in emergency accommodation)",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/"
+  },
+  {
+    "date": "2026-11-15",
+    "impact": "New Employment Permits 'New companies' view: companies receiving their first permit since January 2020; 'Employer directory' renamed 'Company directory'",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/"
+  },
+  {
+    "date": "2026-11-14",
+    "impact": "IPAS Payments classification corrections across Q1-Q3 2026 (quarterly totals unchanged)",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/"
+  },
+  {
     "date": "2026-11-11",
     "impact": "Live Register dashboard refreshed to October 2026 (168,352 persons on the Live Register)",
     "creator": "Nick Delehanty",
