@@ -1,7 +1,7 @@
 ---
 title: Boreen
 category: Games
-owner: ["Unknown"]
+owner: ["Oisin McKnight"]
 description: A free daily Ireland trivia game — seven questions, 25 seconds each, rarer answers take you further along the road.
 status: true
 link: https://boreen.ie/
