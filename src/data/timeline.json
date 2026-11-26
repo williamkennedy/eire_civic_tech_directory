@@ -24,6 +24,46 @@
     "url": "https://citizendata.ie"
   },
   {
+    "date": "2026-11-25",
+    "impact": "DáilDex moved its whole app and self-hosted open models onto its own EU servers in Dublin (overflow in Frankfurt and Warsaw), with no prompt logging by default",
+    "creator": "Leemer Group",
+    "project": "daildex",
+    "category": "Governance",
+    "url": "https://www.daildex.com/blog/running-on-our-own-european-servers"
+  },
+  {
+    "date": "2026-11-21",
+    "impact": "Leagues can now have up to 250 members (up from 50), league tables can be shared as an image, and landmarks on the result map show how many players got that far",
+    "creator": "Unknown",
+    "project": "boreen",
+    "category": "Games",
+    "url": "https://boreen.ie/whats-new"
+  },
+  {
+    "date": "2026-11-20",
+    "impact": "IPAS Weekly dashboard refreshed to week ending 15 Nov 2026 (IPAS population 31,393)",
+    "creator": "Nick Delehanty",
+    "project": "public-data-unpacked",
+    "category": "Accountability",
+    "url": "https://www.publicdataunpacked.ie/ipas-weekly"
+  },
+  {
+    "date": "2026-11-20",
+    "impact": "Added a Streaks tab to the players' league, a close-up replay of your journey, and timer-only scoring for the league of leagues",
+    "creator": "Unknown",
+    "project": "boreen",
+    "category": "Games",
+    "url": "https://boreen.ie/whats-new"
+  },
+  {
+    "date": "2026-11-19",
+    "impact": "Launched the players' league: one public league of every player who joins, with standings for today, this week and this month",
+    "creator": "Unknown",
+    "project": "boreen",
+    "category": "Games",
+    "url": "https://boreen.ie/whats-new"
+  },
+  {
     "date": "2026-11-17",
     "impact": "Emergency Accommodation dashboard refreshed to September 2026 (12,168 adults in emergency accommodation)",
     "creator": "Nick Delehanty",
